@@ -26,5 +26,15 @@ namespace Task.Areas.Admin.Controllers
         
             return View();  
         }
+
+        [HttpPost]
+        public IActionResult Create(Slide slide)
+        {
+            _context.Slides.Add(slide);
+            _context.SaveChanges();
+
+            return View();
+        }
+
     }
 }
